@@ -61,7 +61,7 @@ currency_convertions = [
 
 
 class Command(BaseCommand):
-    help = "Creates the default currency convertions in the database."
+    help = "Creates currency convertions in the database."
 
     def handle(self, *args, **options):
         try:
