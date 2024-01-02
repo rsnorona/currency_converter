@@ -29,16 +29,16 @@ Currency Conversion is a crucial process that involves converting from one curre
 
 Before you begin:
   1. Make sure that [Python](https://www.python.org/) (version 3.10 or higher) is installed.
-  2. Make sure that [Django](https://www.djangoproject.com/) (version 5.0 or higher) is installed.
-  3. Make sure that [Git](https://git-scm.com/) is installed.
-  4. Download git repository using git SSH (don't forget to add ssh key first)
+  2. Make sure that [Git](https://git-scm.com/) is installed.
+  3. Download git repository using git SSH (don't forget to add ssh key first)
     - [Repository](https://github.com/rsnorona/currency_converter)
-  5. Navigate to application directory
-    - ``cd currency_converter``
-  6. Install application dependencies
-    - ``sh scripts/install.sh``
-  7. Start the application
-    - ``sh scripts/start.sh``
+
+  4. Navigate to application directory
+    - ```cd currency_converter```
+  5. Install application dependencies
+    - ```sh scripts/install.sh```
+  6. Start the application
+    - ```sh scripts/start.sh```
 
 ## API'S Usage
 
