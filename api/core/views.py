@@ -5,8 +5,8 @@ from django.http import JsonResponse
 from core.functions import (
     validate_and_create_currency_convertion_object,
     get_and_validate_retrieve_currency_request_fields,
-    retrieve_by_direct_currency_convertion,
-    retrieve_by_triangular_currency_convertion,
+    retrieve_currency_by_direct_currency_convertion,
+    retrieve_currency_by_triangular_currency_convertion,
 )
 from core.representations import (
     direct_currency_convertion_representation,
@@ -22,7 +22,10 @@ def create_currency_convertion(request):
         try:
             created_currency = validate_and_create_currency_convertion_object(data)
         except ValidationError as ve:
-            return JsonResponse({"error": str(ve)})
+            return JsonResponse(
+                {"error": str(ve)},
+                status=400,
+            )
         return JsonResponse(
             {
                 "success": f"New currency was created successfully",
@@ -39,8 +42,10 @@ def create_currency_convertion(request):
                     values
                 )
             except ValidationError as ve:
-                return JsonResponse({"error": str(ve)})
-
+                return JsonResponse(
+                    {"error": str(ve)},
+                    status=400,
+                )
             created_currencies_serialized.append(
                 direct_currency_convertion_representation(created_currency)
             )
@@ -56,13 +61,16 @@ def create_currency_convertion(request):
 @api_view(["POST"])
 def retrieve_currency_convertion(request):
     data = request.data
-    (
-        source_currency,
-        target_currency,
-        effective_date,
-    ) = get_and_validate_retrieve_currency_request_fields(data)
+    try:
+        (
+            source_currency,
+            target_currency,
+            effective_date,
+        ) = get_and_validate_retrieve_currency_request_fields(data)
+    except ValidationError as ve:
+        return JsonResponse({"error": str(ve)}, status=400)
 
-    direct_convertion_result = retrieve_by_direct_currency_convertion(
+    direct_convertion_result = retrieve_currency_by_direct_currency_convertion(
         source_currency, target_currency, effective_date
     )
     if direct_convertion_result is not None:
@@ -74,8 +82,10 @@ def retrieve_currency_convertion(request):
             status=200,
         )
 
-    triangular_currency_convertion_result = retrieve_by_triangular_currency_convertion(
-        source_currency, target_currency, effective_date
+    triangular_currency_convertion_result = (
+        retrieve_currency_by_triangular_currency_convertion(
+            source_currency, target_currency, effective_date
+        )
     )
     if triangular_currency_convertion_result is not None:
         return JsonResponse(

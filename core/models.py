@@ -15,5 +15,5 @@ class CurrencyExchangeRate(models.Model):
         )
 
     def __str__(self):
-        rounded_exchange_rate = round(self.exchange_rate, 2)
+        rounded_exchange_rate = round(self.exchange_rate, 4)
         return f"Source: {self.source_currency} Target: {self.target_currency} Exchange rate: {rounded_exchange_rate} Effective date: {self.effective_date}"
