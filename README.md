@@ -39,13 +39,16 @@ Before you begin:
   3. Make sure that [Google Chrome](https://www.google.com/intl/es_es/chrome/) (version 120.0.6099.109 or higher) is installed.
   4. Download git repository using git SSH (don't forget to add ssh key first)
     - [Repository](https://github.com/rsnorona/currency_converter)
-
-  5. Navigate to application directory
+  5. Download [Chrome Driver](https://googlechromelabs.github.io/chrome-for-testing/) (according to your operative system) and update the CHROME_DRIVER_PATH in the .env file.
+  6. Update the OPERATIVE_SYSTEM variable in the .env file according to your operative system, the options are: "Windows", "macOS" or "Linux".
+  7. Navigate to application directory
     - ```cd currency_converter```
-  6. Install application dependencies and seed the database
+  8. Install application dependencies and seed the database
     - ```sh scripts/install_and_seed.sh```
-  7. Start the application locally
+  9. Start the application locally
     - ```sh scripts/start.sh```
+  10. Start using the API's or run the automated test
+    - ```sh scripts/run_test.sh```
 
 ## API Usage
 
@@ -62,7 +65,7 @@ Once the application is started, this API will be available and ready to use at:
 
 ```http://localhost:8888/api/currency_converter/create_currency_convertion```
 
-The expected input in the request body is a JSON array of objects or a single object with the following input types:
+The expected input in the request body is a JSON array of objects or a single JSON object with the following input types:
 
   ```json 
 
@@ -378,7 +381,7 @@ Please navigate to the TESTCASES.md file for detailed information.
 
 ## Automated test case
 
-Specify the license under which your project is distributed. Include a link to the full license text.
+The current application has an automated test based on Selenium WebDriver which checks if the system retrieve currency convertion API is able to find and retrieve a triangular currency convertion.
 
 ## Note
 

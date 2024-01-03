@@ -7,9 +7,15 @@ var data = arguments[1];
 for (var key in data) {
     if (data.hasOwnProperty(key)) {
         var input = document.createElement("input");
-        input.type = "hidden";
         input.name = key;
-        input.value = data[key];
+        if (input.name === "exchange_rate") {
+            input.type = "float";
+            input.value = parseFloat(data[key]);
+        }
+        else{
+            input.type="str";
+            input.value = data[key];
+        }
         form.appendChild(input);
     }
 }

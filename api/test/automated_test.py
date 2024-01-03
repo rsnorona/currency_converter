@@ -25,19 +25,14 @@ def automated_test(api_url, data):
 
     chrome_options.add_argument(f"webdriver.chrome.driver={chrome_driver_path}")
     driver = webdriver.Chrome(options=chrome_options)
-
-    if api_url:
-        driver.get(api_url)
-        with open("api/test/submitForm.js", "r") as file:
-            javascript_code = file.read()
-        driver.execute_script(javascript_code, api_url, data)
-        time.sleep(2)
-        driver.implicitly_wait(5)
-        soup = BeautifulSoup(driver.page_source, "html.parser")
-        pre_tag = soup.find("pre")
-        if pre_tag:
-            json_string = pre_tag.text
-            parsed_json = json.loads(json_string)
-            response = json.dumps(parsed_json, indent=2)
-            print(response)
-    driver.quit()
+    with open("api/test/submitForm.js", "r") as file:
+        javascript_code = file.read()
+    driver.execute_script(javascript_code, api_url, data)
+    time.sleep(5)
+    soup = BeautifulSoup(driver.page_source, "html.parser")
+    pre_tag = soup.find("pre")
+    if pre_tag:
+        json_string = pre_tag.text
+        parsed_json = json.loads(json_string)
+        json_response = json.dumps(parsed_json, indent=2)
+        return json_response
