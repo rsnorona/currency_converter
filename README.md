@@ -47,7 +47,7 @@ Before you begin:
     - ```sh scripts/install_and_seed.sh```
   9. Start the application locally
     - ```sh scripts/start.sh```
-  10. Start using the API's or run the automated test
+  10. Start using the API's or run the automated test by openning a new terminal and executing
     - ```sh scripts/run_test.sh```
 
 ## API Usage
