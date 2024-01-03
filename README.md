@@ -381,7 +381,7 @@ Please navigate to the TESTCASES.md file for detailed information.
 
 ## Automated test case
 
-The current application has an automated test based on Selenium WebDriver which checks if the system retrieve currency convertion API is able to find and retrieve a triangular currency convertion.
+The current application has an automated test based on Selenium WebDriver which checks if the retrieve currency convertion API is able to find and retrieve a triangular currency convertion effectively.
 
 ## Note
 

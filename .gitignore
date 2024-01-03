@@ -2,6 +2,5 @@
 __pycache__/
 /venv/
 db.sqlite3
-/resources/
 .env
 chromedriver

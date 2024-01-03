@@ -1,0 +1,1111 @@
+{
+	"info": {
+		"_postman_id": "5d56b455-8d6a-4371-ada2-ca4ff22cdaf4",
+		"name": "Currency Covertion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28809562",
+		"_collection_link": "https://solar-meteor-384112.postman.co/workspace/Richi_Workspace~0f17c2f4-2e17-4dea-8f7a-4c813c29852f/collection/28809562-5d56b455-8d6a-4371-ada2-ca4ff22cdaf4?action=share&source=collection_link&creator=28809562"
+	},
+	"item": [
+		{
+			"name": "create_currency_exchange_rate",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Device-UID",
+						"value": "{{device_uid}}",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Test1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source_currency\": \"USD\",\n    \"target_currency\": \"mxn\",\n    \"effective_date\": \"2023-12-02\",\n    \"exchange_rate\": 1.3232\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/currency_converter/create_currency_convertion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"currency_converter",
+						"create_currency_convertion"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfull_response_array_of_currencies",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Device-UID",
+								"value": "{{device_uid}}",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Test1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"source_currency\": \"USD\",\n        \"target_currency\": \"EUR\",\n        \"effective_date\": \"2024-01-02\",\n        \"exchange_rate\": 0.9122\n    },\n    {\n        \"source_currency\": \"EUR\",\n        \"target_currency\": \"MXN\",\n        \"effective_date\": \"2024-01-02\",\n        \"exchange_rate\": 18.5632\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/currency_converter/create_currency_convertion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"currency_converter",
+								"create_currency_convertion"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 03:17:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "302"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"All the currency convertions were created successfully\",\n    \"data\": [\n        {\n            \"source_currency\": \"USD\",\n            \"target_currency\": \"EUR\",\n            \"effective_date\": \"2024-01-02\",\n            \"exchange_rate\": 0.9122\n        },\n        {\n            \"source_currency\": \"EUR\",\n            \"target_currency\": \"MXN\",\n            \"effective_date\": \"2024-01-02\",\n            \"exchange_rate\": 18.5632\n        }\n    ]\n}"
+				},
+				{
+					"name": "successfull_response_single_currency",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Device-UID",
+								"value": "{{device_uid}}",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Test1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source_currency\": \"COP\",\n    \"target_currency\": \"MXN\",\n    \"effective_date\": \"2024-01-02\",\n    \"exchange_rate\": 0.0044\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/currency_converter/create_currency_convertion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"currency_converter",
+								"create_currency_convertion"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 03:21:09 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "171"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"New currency was created successfully\",\n    \"data\": {\n        \"source_currency\": \"COP\",\n        \"target_currency\": \"MXN\",\n        \"effective_date\": \"2024-01-02\",\n        \"exchange_rate\": 0.0044\n    }\n}"
+				},
+				{
+					"name": "error_already_existing_currency_conversion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Device-UID",
+								"value": "{{device_uid}}",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Test1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source_currency\": \"USD\",\n    \"target_currency\": \"EUR\",\n    \"effective_date\": \"2023-01-01\",\n    \"exchange_rate\": 0.93384\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/currency_converter/create_currency_convertion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"currency_converter",
+								"create_currency_convertion"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 03:46:12 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "123"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"[\\\"Invalid combination ['This specific currency exchange rate: (USD --> MXN in 2024-01-02) already exists']\\\"]\"\n}"
+				},
+				{
+					"name": "error_missing_a_required_field",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Device-UID",
+								"value": "{{device_uid}}",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Test1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"target_currency\": \"MXN\",\n    \"effective_date\": \"2024-01-02\",\n    \"exchange_rate\": 0.0044\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/currency_converter/create_currency_convertion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"currency_converter",
+								"create_currency_convertion"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 03:37:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"['Missing one or more required fields in the request.']\"\n}"
+				},
+				{
+					"name": "error_source_currency_input_type",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Device-UID",
+								"value": "{{device_uid}}",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Test1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source_currency\": 1,\n    \"target_currency\": \"MXN\",\n    \"effective_date\": \"2023-12-02\",\n    \"exchange_rate\": 1.3232\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/currency_converter/create_currency_convertion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"currency_converter",
+								"create_currency_convertion"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 15:03:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, POST"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"[\\\"Invalid currency input. ['Source and target currency must be a 3-letter code in capital letters.']\\\"]\"\n}"
+				},
+				{
+					"name": "error_source_currency_input_value",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Device-UID",
+								"value": "{{device_uid}}",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Test1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source_currency\": \"Usd\",\n    \"target_currency\": \"MXN\",\n    \"effective_date\": \"2024-01-02\",\n    \"exchange_rate\": 0.0044\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/currency_converter/create_currency_convertion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"currency_converter",
+								"create_currency_convertion"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 03:38:36 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"[\\\"Invalid currency input. ['Source and target currency must be a 3-letter code in capital letters.']\\\"]\"\n}"
+				},
+				{
+					"name": "error_target_currency_input_type",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Device-UID",
+								"value": "{{device_uid}}",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Test1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source_currency\": \"USD\",\n    \"target_currency\": 1,\n    \"effective_date\": \"2023-12-02\",\n    \"exchange_rate\": 1.3232\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/currency_converter/create_currency_convertion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"currency_converter",
+								"create_currency_convertion"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 15:04:27 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, POST"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"[\\\"Invalid currency input. ['Source and target currency must be a 3-letter code in capital letters.']\\\"]\"\n}"
+				},
+				{
+					"name": "error_target_currency_input_value",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Device-UID",
+								"value": "{{device_uid}}",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Test1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source_currency\": \"USD\",\n    \"target_currency\": \"mxn\",\n    \"effective_date\": \"2023-12-02\",\n    \"exchange_rate\": 1.3232\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/currency_converter/create_currency_convertion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"currency_converter",
+								"create_currency_convertion"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 15:05:18 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, POST"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"[\\\"Invalid currency input. ['Source and target currency must be a 3-letter code in capital letters.']\\\"]\"\n}"
+				},
+				{
+					"name": "error_effective_date_input_value",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Device-UID",
+								"value": "{{device_uid}}",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Test1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source_currency\": \"USD\",\n    \"target_currency\": \"MXN\",\n    \"effective_date\": \"2025-12-02\",\n    \"exchange_rate\": 1.3232\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/currency_converter/create_currency_convertion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"currency_converter",
+								"create_currency_convertion"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 15:02:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, POST"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"[\\\"Invalid effective date input. ['Effective date cannot be in the future.']\\\"]\"\n}"
+				},
+				{
+					"name": "error_exchange_rate_input_type",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Device-UID",
+								"value": "{{device_uid}}",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Test1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source_currency\": \"USD\",\n    \"target_currency\": \"MXN\",\n    \"effective_date\": \"2023-12-02\",\n    \"exchange_rate\": \"A\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/currency_converter/create_currency_convertion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"currency_converter",
+								"create_currency_convertion"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 14:59:05 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, POST"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "124"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"[\\\"Invalid exchange rate input. ['Exchange rate: (A) must be a non-negative, greater than 0 numeric value.']\\\"]\"\n}"
+				}
+			]
+		},
+		{
+			"name": "retrieve_currency_exchange_rate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source_currency\": \"USD\",\n    \"target_currency\": \"EUR\",\n    \"effective_date\": \"2022-02-28\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/api/currency_converter/retrieve_currency_convertion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"currency_converter",
+						"retrieve_currency_convertion"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfull_direct_currency_convertion_found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source_currency\": \"USD\",\n    \"target_currency\": \"EUR\",\n    \"effective_date\": \"2022-02-28\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/currency_converter/retrieve_currency_convertion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"currency_converter",
+								"retrieve_currency_convertion"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 03:49:24 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "168"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"Direct currency convertion found\",\n    \"data\": [\n        {\n            \"source_currency\": \"USD\",\n            \"target_currency\": \"EUR\",\n            \"effective_date\": \"2022-01-01\",\n            \"exchange_rate\": 0.8815\n        }\n    ]\n}"
+				},
+				{
+					"name": "successfull_triangular_currency_convertion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source_currency\": \"COP\",\n    \"target_currency\": \"GBP\",\n    \"effective_date\": \"2022-02-28\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/api/currency_converter/retrieve_currency_convertion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"currency_converter",
+								"retrieve_currency_convertion"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jan 2024 03:51:24 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "370"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"Triangular currency convertion found\",\n    \"data\": {\n        \"source_currency\": \"COP\",\n        \"auxiliar_currency\": \"JPY\",\n        \"auxiliar_currency_effective_date\": \"2022-01-01\",\n        \"auxiliar_currency_exchange_rate\": 0.0283,\n        \"target_currency\": \"GBP\",\n        \"target_currency_effective_date\": \"2022-01-01\",\n        \"target_currency_exchange_rate\": 0.0064,\n        \"triangular_exchange_rate_convertion\": 0.0002\n    }\n}"
+				}
+			]
+		}
+	]
+}
