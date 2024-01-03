@@ -29,6 +29,7 @@ def automated_test(api_url, data):
         javascript_code = file.read()
     driver.execute_script(javascript_code, api_url, data)
     time.sleep(5)
+
     soup = BeautifulSoup(driver.page_source, "html.parser")
     pre_tag = soup.find("pre")
     if pre_tag:
